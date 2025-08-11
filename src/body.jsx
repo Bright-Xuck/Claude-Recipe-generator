@@ -7,15 +7,6 @@ export default function Body(){
 
             const [receipe,setreceipe]= useState("")
 
-         let [newstate, setnewstate] = useState("Banana")//destrcuture the usestae array
-
-
-        function clicks(){
-           setnewstate("not banana") //the next thing to be rendered is the function
-        }
-
-
-
  const [foods,setfoods]= useState([])
 
      const foodingre = foods.map(each =>{
@@ -44,7 +35,7 @@ export default function Body(){
         <main>
             <form  action={addIngredient}>
                 <input type="text" placeholder="e.g tomatoes" aria-label="Add Ingredient" name="ingredient" />
-                <button onClick={clicks} className="addbtn">{newstate}</button>
+                <button  className="addbtn">Add ingredient</button>
             </form>
             {
                 foods.length>0 && <IngredientsList allfood={foodingre} foodstate={foods} setreceipe={setreceipe}/>
