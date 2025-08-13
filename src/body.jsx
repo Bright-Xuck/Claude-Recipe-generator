@@ -1,13 +1,20 @@
-import { useState } from "react"
+import { useState, useRef , useEffect} from "react"
 import "../src/index.css"
 import Clauderecipe from "./claudereceipe"
 import IngredientsList from "./IngredientsList"
 
 export default function Body(){
 
-            const [receipe,setreceipe]= useState("")
+    const [receipe,setreceipe]= useState("")
+    const recipeSection = useRef(null)
 
- const [foods,setfoods]= useState([])
+useEffect(() =>{
+    if(recipeSection.current !== null && receipe !== ""){
+    recipeSection.current.scrollIntoView({behavior: "smooth"})
+    }
+}, [receipe])
+
+ const [foods,setfoods]= useState(["corn", "rice", "beans","fish"])
 
      const foodingre = foods.map(each =>{
       return <li key={each}>{each}</li>
@@ -38,7 +45,9 @@ export default function Body(){
                 <button  className="addbtn">Add ingredient</button>
             </form>
             {
-                foods.length>0 && <IngredientsList allfood={foodingre} foodstate={foods} setreceipe={setreceipe}/>
+                foods.length>0 && <IngredientsList 
+                ref={recipeSection}
+                allfood={foodingre} foodstate={foods} setreceipe={setreceipe}/>
             }
             {receipe &&
               <Clauderecipe receipe={receipe}/>  }

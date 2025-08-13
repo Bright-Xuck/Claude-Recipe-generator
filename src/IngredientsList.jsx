@@ -15,7 +15,7 @@ export default function IngredientsList(prop){
  {
      prop.foodstate.length>3 &&
  <div className="container">
- <div>
+ <div ref={prop.ref}>
      <h3>Ready for a receipe?</h3>
      <p>Generate a receipe from your list of ingredients</p>
  </div>
