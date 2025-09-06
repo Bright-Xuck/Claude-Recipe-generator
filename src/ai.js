@@ -22,6 +22,6 @@ export async function getRecipeFromMistral(ingredientArr) {
         return response.choices[0].message.content
     } catch(err){
         console.error(err.message)
-        throw err; // Re-throw the error to be caught by the calling component
+        throw err;
     }
 }
