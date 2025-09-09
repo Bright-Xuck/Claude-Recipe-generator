@@ -14,7 +14,7 @@ useEffect(() =>{
     }
 }, [receipe])
 
- const [foods,setfoods]= useState(["corn", "rice", "beans","fish"])
+ const [foods,setfoods]= useState([])
 
      const foodingre = foods.map(each =>{
       return <li key={each}>{each}</li>
