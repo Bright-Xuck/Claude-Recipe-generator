@@ -40,6 +40,7 @@ useEffect(() =>{
      
     return(
         <main>
+            <h1>Enter Ingredients to generate a tasty Receipe</h1>
             <form  action={addIngredient}>
                 <input type="text" placeholder="e.g tomatoes" aria-label="Add Ingredient" name="ingredient" />
                 <button  className="addbtn">Add ingredient</button>
